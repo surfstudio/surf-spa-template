@@ -1,0 +1,96 @@
+{
+  "root": true,
+  "env": { "browser": true, "es2020": true },
+  "extends": [
+    "airbnb",
+    "airbnb/hooks",
+    "airbnb-typescript",
+    "plugin:prettier/recommended",
+    "plugin:storybook/recommended"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "globals": {
+    "globalsIsDev": true
+  },
+  "ignorePatterns": ["node_modules", "build", "dist"],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["react-refresh", "prettier" ],
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto",
+        "singleQuote": true,
+        "tabWidth": 4,
+        "bracketSpacing": true,
+        "bracketSameLine": true,
+        "printWidth": 120,
+        "semi": true,
+        "trailingComma": "all",
+        "arrowParens": "always"
+      }
+    ],
+    "one-var": 0,
+    "no-underscore-dangle": 0,
+    "react-hooks/exhaustive-deps": 0,
+    "import/prefer-default-export": 0,
+    "import/no-extraneous-dependencies": 0,
+    "react/react-in-jsx-scope": 0,
+    "no-param-reassign": 0,
+    "react/display-name": 0,
+    "react/prop-types": 0,
+    "react/require-default-props": 0,
+    "react/jsx-props-no-spreading": 0,
+    "react/function-component-definition": 0,
+    "react/no-unstable-nested-components": ["error", { "allowAsProps": true }],
+    "import/no-cycle": 2,
+    "import/first": 2,
+    "import/order": 2,
+    "eqeqeq": 2,
+    "complexity": [2, {"max": 10}],
+    "camelcase": [2, {"allow": ["^UNSAFE_"], "properties": "never"}],
+    "@typescript-eslint/no-magic-numbers": [1, {
+      "ignore": [-1, 0, 1, 2]}],
+    "@typescript-eslint/consistent-type-imports": [
+      "error",
+      {
+        "prefer": "type-imports"
+      }
+    ],
+    "@typescript-eslint/ban-types": [
+      "error",
+      {
+        "types": {
+          "FC": "Useless and has some drawbacks, see https://github.com/facebook/create-react-app/pull/8177",
+          "React.FC": "Useless and has some drawbacks, see https://github.com/facebook/create-react-app/pull/8177",
+          "React.FunctionComponent": "Useless and has some drawbacks, see https://github.com/facebook/create-react-app/pull/8177"
+        },
+        "extendDefaults": false
+      }
+    ],
+    "jsx-a11y/label-has-associated-control": [
+      "error",
+      {
+        "required": {
+          "some": ["nesting", "id"]
+        }
+      }
+    ],
+    "jsx-a11y/label-has-for": [
+      "error",
+      {
+        "required": {
+          "some": ["nesting", "id"]
+        }
+      }
+    ],
+    "react-refresh/only-export-components": 0
+  }
+}
