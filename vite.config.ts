@@ -10,7 +10,7 @@ export default defineConfig({
     server: {
         proxy: {
             '/api': {
-                target: 'https://appdev.astrasend.ru',
+                target: '',
                 changeOrigin: true,
             },
         },

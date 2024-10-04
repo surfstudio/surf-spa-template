@@ -2,8 +2,8 @@ import cn from 'classnames';
 
 import cls from './PageLoader.module.scss';
 
-interface PageLoaderProps {
+interface IPageLoaderProps {
     className?: string;
 }
 
-export const PageLoader = ({ className }: PageLoaderProps) => <div className={cn(cls.PageLoader, {}, [className])} />;
+export const PageLoader = ({ className }: IPageLoaderProps) => <div className={cn(cls.PageLoader, {}, [className])} />;

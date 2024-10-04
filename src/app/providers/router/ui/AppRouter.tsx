@@ -1,12 +1,12 @@
 import { Fragment, memo, Suspense, useCallback } from 'react';
 import { Navigate, Route, Routes, useParams } from 'react-router-dom';
 
-import type { AppRoutesProps } from '@/shared/types/router';
-import { PageLoader } from '@/shared/ui/PageLoader';
-
 import { routeConfig } from '../config/routeConfig';
 
 import { RequireAuth } from './RequireAuth';
+
+import type { TAppRoutesProps } from '@/shared/types/router';
+import { PageLoader } from '@/shared/ui/PageLoader';
 
 const RedirectWithParams = ({ to }: { to: string }) => {
     const params = useParams();
@@ -16,7 +16,7 @@ const RedirectWithParams = ({ to }: { to: string }) => {
 };
 
 const AppRouterComponent = () => {
-    const renderWithWrapper = useCallback((route: AppRoutesProps, index: number) => {
+    const renderWithWrapper = useCallback((route: TAppRoutesProps, index: number) => {
         const fallback = <PageLoader />;
 
         const element = <Suspense fallback={fallback}>{route.element}</Suspense>;

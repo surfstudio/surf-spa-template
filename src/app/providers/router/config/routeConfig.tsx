@@ -1,27 +1,27 @@
+import { RootLayout } from '../../ui/RootLayout';
+
 import { HomePage } from '@/pages/HomePage';
 import { LoginPage } from '@/pages/LoginPage';
 import { NotFoundPage } from '@/pages/NotFoundPage';
-import { AppRoutes, loginRoute, RootRoutes } from '@/shared/const/router/router';
-import type { AppRoutesProps } from '@/shared/types/router';
+import { AppRoutesEnum, loginRoute, RootRoutesEnum } from '@/shared/const/router/router';
+import type { TAppRoutesProps } from '@/shared/types/router';
 
-import { RootLayout } from '../../ui/RootLayout';
-
-export const routeConfig: Record<RootRoutes, AppRoutesProps> = {
-    [RootRoutes.LOGIN]: {
+export const routeConfig: Record<RootRoutesEnum, TAppRoutesProps> = {
+    [RootRoutesEnum.Login]: {
         path: loginRoute,
         element: <LoginPage />,
     },
-    [RootRoutes.ROOT_LAYOUT]: {
+    [RootRoutesEnum.RootLayout]: {
         path: '/',
         element: <RootLayout />,
         nestedRoutes: {
-            [AppRoutes.MAIN]: {
+            [AppRoutesEnum.Main]: {
                 path: '/',
                 element: <HomePage />,
             },
         },
     },
-    [RootRoutes.NOT_FOUND]: {
+    [RootRoutesEnum.NotFound]: {
         path: '*',
         element: <NotFoundPage />,
     },
