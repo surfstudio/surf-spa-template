@@ -1,4 +1,4 @@
-export const persistStorage = {
+export const localStorageService = {
     checkHasItem: (key: string): boolean => !!localStorage.getItem(key),
 
     getItemSafe: <T>(key: string, defaultValue: T): T => {

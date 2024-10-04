@@ -1,8 +1,5 @@
 import axios from 'axios';
 
-import { ACCESS_TOKEN } from '@/shared/const/localstorage/localstorage';
-import { persistStorage } from '@/shared/lib/persist-storage/persist-storage';
-
 export const axiosInstance = axios.create({
     baseURL: '/api',
     headers: {
@@ -12,7 +9,7 @@ export const axiosInstance = axios.create({
 
 axiosInstance.interceptors.request.use((config) => {
     if (config.headers) {
-        config.headers.Authorization = `Bearer ${persistStorage.getItem<string>(ACCESS_TOKEN) || ''}`;
+        config.headers.Authorization = `Bearer }`;
     }
 
     return config;
